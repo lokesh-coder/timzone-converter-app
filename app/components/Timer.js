@@ -22,11 +22,12 @@ var Timer = React.createClass({
 		});
 	},
 	componentDidMount: function() {
+		// console.log(M.tz.names());
 		this.intialTimer = setInterval(this.tickTock, 1000);
 	},
 
 	componentWillReceiveProps: function(nextprops) {
-		if(nextprops.raw=='' || nextprops.raw=='now'){
+		if(nextprops.raw=='' || nextprops.raw=='now' || nextprops.raw==null){
 			this.setState({
 				time: M().tz(this.props.defaultTZ).format(this.state.formats.time),
 				date: M().tz(this.props.defaultTZ).format(this.state.formats.dateExpanded),

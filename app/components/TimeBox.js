@@ -8,7 +8,7 @@ let TimeBox = React.createClass( {
 		}
 	},
 	render: function() {
-		return <div className = "time-box" >
+		return <div className = "time-box" ref={this.props.id} onClick={this.props.triggerParent.bind(this,this.props.id)}>
 			< UserInput defaultTZ={this.props.defaultTZ}/ >
 			< /div>;
 	}
